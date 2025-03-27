@@ -9,8 +9,6 @@ public class DB {
 
     private static Connection conn = null;
 
-    //Os métodos 'close()' são opcionais, mas servem para que não tenhamos que abrir diversos
-    //trycatch aninhados dentro do código, trazendo maior legibilidade.
     public static Connection getConnection(){
         if(conn == null){
             try {
