@@ -11,16 +11,23 @@ import java.util.List;
 
 public class program {
     public static void main(String[] args) {
+        //fazer um remove para remover os funcionários repetidos no banco
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
         Seller seller = sellerDao.findById(3);
 
         System.out.println("=== Teste 1: Seller findById ===");
         System.out.println(seller);
+
         System.out.println("\n=== Teste 2: Seller findByDepartment ===");
         Department dep = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(dep);
+        for(Seller s : list){
+            System.out.println(s);
+        }
 
+        System.out.println("\n=== Teste 3: Seller findAll ===");
+        list = sellerDao.findAll();
         for(Seller s : list){
             System.out.println(s);
         }
