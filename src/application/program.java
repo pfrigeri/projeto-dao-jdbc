@@ -8,9 +8,11 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         //fazer um remove para remover os funcionários repetidos no banco
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -41,6 +43,13 @@ public class program {
         seller = sellerDao.findById(1);
         seller.setName("Martha Waine");
         sellerDao.update(seller);
+        System.out.println("Update Completed");
+
+        System.out.println("\n=== Teste 6: Seller Delete ===");
+        System.out.println("Enter Id to delete seller: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete Completed");
 
     }
 }
