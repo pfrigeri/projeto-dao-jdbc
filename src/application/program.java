@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //fazer um remove para remover os funcionários repetidos no banco
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
         Seller seller = sellerDao.findById(3);
