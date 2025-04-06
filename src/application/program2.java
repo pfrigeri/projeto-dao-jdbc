@@ -5,6 +5,9 @@ import model.dao.DepartmentDao;
 import model.dao.impl.DepartmentDaoJDBC;
 import model.entities.Department;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class program2 {
     public static void main(String[] args) {
 
@@ -28,5 +31,13 @@ public class program2 {
         System.out.println("=== Teste 4: Department deleteById ===");
         departmentDao.deleteById(8);
         System.out.println("Deletion Successful !");
+
+        System.out.println("=== Teste 4: Department findAll ===");
+        List<Department> list =  new ArrayList<>();
+        list = departmentDao.findAll();
+
+        for(Department d : list){
+            System.out.println(d);
+        }
     }
 }
